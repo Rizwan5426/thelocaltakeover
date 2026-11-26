@@ -1,0 +1,745 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>THE LOCAL TAKEOVER | Full-Stack Digital Marketing Case Study — Rizwan Ahmed</title>
+<meta name="description" content="Brand positioning, audience research, SEO, social, Google and Meta ad structures and acquisition workflows for a Dubai pre-owned car dealer. Concept case study by Rizwan Ahmed.">
+<meta property="og:title" content="THE LOCAL TAKEOVER | Full-Stack Digital Marketing Case Study — Rizwan Ahmed">
+<meta property="og:description" content="Brand positioning, audience research, SEO, social, Google and Meta ad structures and acquisition workflows for a Dubai pre-owned car dealer. Concept case study by Rizwan Ahmed.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#15181B">
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,75..125,400..800;1,75..125,400..800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout concept: numbered editorial case study. Full-width bands alternate between concrete and asphalt, each opened by a mono index label and a large display headline. Palette comes from a garage floor: concrete, asphalt, signal amber, rust. */
+:root{
+  --bg:#E9EBEC; --bg2:#DEE1E2; --card:#F5F6F6; --ink:#15181B; --muted:#556068; --line:#BFC5C8;
+  --band:#15181B; --band-ink:#ECEEEF; --band-muted:#98A3AA; --band-line:#2F363C;
+  --signal:#F2A900; --signal-ink:#15181B; --rust:#B0361A;
+  --t1:#E2DACA; --t2:#D6DCD5; --t3:#E1D2CA; --t4:#D9DCE2;
+  --display:"Archivo","Segoe UI",Arial,sans-serif; --body:Inter,"Segoe UI",Arial,sans-serif; --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0F1214; --bg2:#14181B; --card:#1A1F23; --ink:#ECEEEF; --muted:#9AA4AB; --line:#2B3238;
+  --band:#050607; --band-ink:#ECEEEF; --band-muted:#8F9AA2; --band-line:#252B30; --rust:#FF8663;
+  --t1:#2A2820; --t2:#20262A; --t3:#2C2420; --t4:#20242B; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0F1214; --bg2:#14181B; --card:#1A1F23; --ink:#ECEEEF; --muted:#9AA4AB; --line:#2B3238;
+  --band:#050607; --band-ink:#ECEEEF; --band-muted:#8F9AA2; --band-line:#252B30; --rust:#FF8663;
+  --t1:#2A2820; --t2:#20262A; --t3:#2C2420; --t4:#20242B; color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:60}
+h1,h2,h3,h4{font-family:var(--display);margin:0;text-wrap:balance}
+p{margin:0 0 .8em;max-width:64ch}
+a{color:inherit}
+.in{width:100%;max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.mono{font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase}
+/* header */
+.hdr{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--bg);border-bottom:1px solid var(--line)}
+.hdr .in{display:flex;align-items:center;gap:20px;min-height:56px}
+.brand{font-family:var(--display);font-weight:800;font-variation-settings:"wdth" 110;letter-spacing:.01em;white-space:nowrap}
+.brand b{color:var(--rust)}
+.nav{display:flex;gap:4px;overflow-x:auto;flex:1;scrollbar-width:none;min-width:0;position:relative}
+.nav::-webkit-scrollbar{display:none}
+.nav a{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:var(--muted);padding:19px 10px 17px;border-bottom:2px solid transparent;white-space:nowrap}
+.nav a:hover{color:var(--ink)}
+.nav a.on{color:var(--ink);border-bottom-color:var(--rust)}
+.count{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;color:var(--muted);white-space:nowrap}
+/* bands */
+.band{padding:84px 0}
+.band.alt{background:var(--bg2)}
+.band.dark{background:var(--band);color:var(--band-ink)}
+.band.dark .muted,.band.dark p{color:var(--band-ink)}
+.band.signal{background:var(--signal);color:var(--signal-ink)}
+.idx{display:block;margin-bottom:22px;color:var(--rust)}
+.band.dark .idx{color:var(--signal)}
+.band.signal .idx{color:var(--signal-ink)}
+.head{font-weight:700;font-variation-settings:"wdth" 100;font-size:clamp(2.4rem,6.4vw,5rem);line-height:.98;letter-spacing:-.02em;margin-bottom:28px;max-width:16ch}
+.head i{font-style:italic;font-weight:600}
+.lede{font-size:1.15rem;line-height:1.55;max-width:46ch}
+.muted{color:var(--muted)}
+.note{font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);line-height:1.6;max-width:none;margin:16px 0 0}
+.band.dark .note{color:var(--band-muted)}
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.g5{grid-template-columns:repeat(5,minmax(0,1fr))}
+.box{border:1px solid var(--line);background:var(--card);padding:24px;min-width:0}
+.band.dark .box{background:transparent;border-color:var(--band-line)}
+.box .mono{display:block;color:var(--muted);margin-bottom:34px}
+.band.dark .box .mono{color:var(--band-muted)}
+.box h3{font-size:1.3rem;font-weight:700;font-variation-settings:"wdth" 100;line-height:1.15;margin-bottom:10px}
+.box p{font-size:.94rem;color:var(--muted);margin-bottom:0}
+.band.dark .box p{color:var(--band-muted)}
+.buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-block;font-family:var(--mono);font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;padding:14px 20px;text-decoration:none;border:1px solid var(--ink);color:var(--ink);background:transparent;cursor:pointer}
+.btn.fill{background:var(--signal);border-color:var(--signal);color:var(--signal-ink);font-weight:500}
+.btn:focus-visible,a:focus-visible,button:focus-visible{outline:2px solid var(--rust);outline-offset:2px}
+.band.dark .btn{border-color:var(--band-ink);color:var(--band-ink)}
+.band.dark .btn.fill{border-color:var(--signal);color:var(--signal-ink)}
+/* hero */
+.hero{padding:64px 0 84px;background:var(--band);color:var(--band-ink);overflow:hidden}
+.hero .grid{grid-template-columns:minmax(0,1.3fr) minmax(0,.9fr);gap:48px;align-items:center}
+.hero .kicker{color:var(--signal);display:block;margin-bottom:24px}
+.hero h1{font-weight:800;font-variation-settings:"wdth" 100;font-size:clamp(2.7rem,7vw,6rem);line-height:.94;letter-spacing:-.025em;margin-bottom:26px}
+.hero h1 i{font-style:italic;font-weight:600;color:var(--signal)}
+.hero p{color:var(--band-muted);font-size:1.1rem;max-width:44ch}
+.hero .btn{border-color:var(--band-ink);color:var(--band-ink)}
+.hero .btn.fill{border-color:var(--signal);color:var(--signal-ink)}
+.rep{background:#EEF0F0;color:#15181B;padding:22px 22px 18px;transform:rotate(1.6deg);box-shadow:0 22px 50px rgba(0,0,0,.45);max-width:420px;margin-left:auto;width:100%}
+.rep .top{display:flex;justify-content:space-between;gap:12px;border-bottom:2px solid #15181B;padding-bottom:12px;margin-bottom:6px}
+.rep .top b{font-family:var(--display);font-size:1.25rem;line-height:1.05;font-weight:800;font-variation-settings:"wdth" 110}
+.rep .top span{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;text-align:right;line-height:1.5}
+.rep .car{font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;padding:10px 0;color:#4A545C}
+.rep .row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:9px 0;border-top:1px solid #C9CED1;font-size:.9rem}
+.rep .ok{font-family:var(--mono);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;background:#F2A900;color:#15181B;padding:2px 8px;white-space:nowrap}
+.rep .foot{font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:#4A545C;border-top:2px solid #15181B;margin-top:6px;padding-top:10px}
+/* strategist's lens */
+.lens{border-left:4px solid var(--rust);background:var(--bg2);padding:22px 24px;margin-top:30px;max-width:46ch}
+.band.alt .lens{background:var(--bg)}
+.lens .mono{color:var(--muted);display:block;margin-bottom:8px}
+.lens p{font-family:var(--display);font-style:italic;font-size:1.5rem;line-height:1.2;margin:0;font-weight:500}
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:48px;align-items:start}
+/* observation + personas */
+.obs h3{font-size:1.2rem}
+.kv{margin-top:16px}
+.kv .mono{margin-bottom:2px;color:var(--rust)}
+.kv p{margin-bottom:12px;font-size:.9rem;color:var(--ink)}
+.band.dark .kv p{color:var(--band-ink)}
+.kv .mono{margin-bottom:2px}
+/* position */
+.pos dl{margin:0}
+.pos .r{display:grid;grid-template-columns:150px minmax(0,1fr);gap:20px;padding:18px 0;border-top:1px solid var(--band-line)}
+.pos dt{font-family:var(--mono);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--signal)}
+.pos dd{margin:0;font-size:1.05rem}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--band-ink);padding:7px 12px}
+.bigq{font-family:var(--display);font-weight:600;font-size:clamp(1.7rem,3.6vw,2.7rem);line-height:1.12;margin-top:34px;max-width:20ch;font-variation-settings:"wdth" 100}
+/* world */
+.sw{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border:1px solid var(--line)}
+.sw div{aspect-ratio:2/1;padding:12px;display:flex;align-items:flex-end;font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;min-width:0}
+.sw span{background:rgba(255,255,255,.78);color:#15181B;padding:2px 6px}
+.spec{margin-top:22px;border-top:1px solid var(--line)}
+.spec .t{padding:18px 0;border-bottom:1px solid var(--line)}
+.spec .t .mono{color:var(--muted);display:block;margin-bottom:6px}
+.s-d{font-family:var(--display);font-weight:800;font-size:2.2rem;line-height:1.05;font-variation-settings:"wdth" 108}
+.s-b{font-size:1.02rem}
+.voice{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
+.voice div{padding:14px 16px;border:1px solid var(--line);background:var(--card);font-size:.92rem}
+.voice .mono{display:block;margin-bottom:6px;color:var(--rust)}
+.voice .no .mono{color:var(--muted)}
+/* system */
+.flowbar{background:var(--band);color:var(--band-ink);display:grid;grid-template-columns:repeat(6,minmax(0,1fr));margin-top:16px}
+.flowbar div{padding:22px 16px;font-family:var(--display);font-size:1.25rem;font-weight:600;border-right:1px solid var(--band-line);position:relative;min-width:0}
+.flowbar div:last-child{border-right:0}
+.flowbar div::after{content:"\2192";position:absolute;right:10px;top:50%;transform:translateY(-50%);color:var(--signal);font-size:1rem}
+.flowbar div:last-child::after{display:none}
+.ch{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.ch .box{min-height:190px;display:flex;flex-direction:column;justify-content:space-between}
+.ch .box .mono{margin-bottom:22px}
+/* lenses */
+.lensgrid .box{min-height:330px;display:flex;flex-direction:column}
+.lensgrid .box h3{font-size:1.8rem;margin-top:auto;margin-bottom:12px}
+.lensgrid .box .mono{margin-bottom:0}
+.lensgrid .fm{border-top:1px solid rgba(21,24,27,.3);margin-top:18px;padding-top:12px;font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:#15181B;line-height:1.6}
+:root:not([data-theme="light"]) .lensgrid .fm{border-top-color:var(--line)}
+.l1{background:var(--t1)!important;border-color:transparent!important}.l2{background:var(--t2)!important;border-color:transparent!important}
+.l3{background:var(--t3)!important;border-color:transparent!important}.l4{background:var(--t4)!important;border-color:transparent!important}
+.lensgrid .box p{color:#2C353B}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .lensgrid .box p,:root:not([data-theme="light"]) .lensgrid .fm{color:var(--muted)}}
+:root[data-theme="dark"] .lensgrid .box p,:root[data-theme="dark"] .lensgrid .fm{color:var(--muted)}
+.big{font-weight:800;font-variation-settings:"wdth" 100;font-size:clamp(3rem,10vw,8.5rem);line-height:.9;letter-spacing:-.03em;margin:0 0 20px}
+.sub{font-family:var(--display);font-style:italic;font-weight:500;font-size:clamp(1.6rem,3.5vw,2.6rem);margin-bottom:26px}
+/* examples */
+.ex{padding:44px 0;border-top:1px solid var(--line)}
+.ex:first-of-type{border-top:0}
+.exh{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+.exh h3{font-size:clamp(1.5rem,3.4vw,2.4rem);font-weight:600;font-variation-settings:"wdth" 100}
+.exh .mono{color:var(--muted)}
+.panels{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.pan{aspect-ratio:3/4.1;padding:16px;display:flex;flex-direction:column;justify-content:space-between;min-width:0;color:#ECEEEF;position:relative;overflow:hidden}
+.pan .mono{font-size:.66rem;opacity:.85}
+.pan b{font-family:var(--display);font-weight:600;font-size:clamp(1.15rem,2.1vw,1.7rem);line-height:1.12;font-variation-settings:"wdth" 100}
+.pan.p1{background:#15181B}.pan.p2{background:#5B6770}.pan.p3{background:#CDB98F;color:#15181B}.pan.p4{background:#2B2F33}
+.pan.p4 b{color:#F2A900}
+.pan::before{content:"";position:absolute;right:-38px;top:30px;width:130px;height:130px;border:1px solid currentColor;border-radius:50%;opacity:.22}
+.dir{margin-top:14px}
+.car-wrap{position:relative}
+.car-tools{display:flex;gap:8px}
+.arr{width:44px;height:44px;border:1px solid var(--ink);background:transparent;color:var(--ink);font-size:1.1rem;cursor:pointer}
+.track{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:12px;scrollbar-width:thin}
+.sl{flex:0 0 min(300px,78%);aspect-ratio:1/1.05;scroll-snap-align:start;padding:20px;display:flex;flex-direction:column;justify-content:space-between;color:#ECEEEF}
+.sl b{font-family:var(--display);font-size:1.7rem;line-height:1.1;font-weight:600;font-variation-settings:"wdth" 100}
+.sl .mono{font-size:.66rem;opacity:.85}
+.sl.a{background:#15181B}.sl.b{background:#CDB98F;color:#15181B}.sl.c{background:#5B6770}.sl.d{background:#CDB98F;color:#15181B}.sl.e{background:#2B2F33}.sl.f{background:#F2A900;color:#15181B}
+/* tabs */
+.tabs{display:flex;gap:6px;border-bottom:1px solid var(--band-line);margin-bottom:26px;flex-wrap:wrap}
+.tabs button{font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;background:none;border:0;border-bottom:2px solid transparent;color:var(--band-muted);padding:12px 14px;cursor:pointer;margin-bottom:-1px}
+.tabs button[aria-selected="true"]{color:var(--band-ink);border-bottom-color:var(--signal)}
+.tp{display:none;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:40px}
+.tp.on{display:grid}
+.tp h3{font-weight:600;font-size:clamp(2rem,4.6vw,3.4rem);line-height:1;font-variation-settings:"wdth" 100}
+.tp ul{margin:0;padding-left:1.1em}
+.tp li{margin-bottom:8px}
+.kp{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.kp span{font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--band-line);padding:6px 10px;color:var(--band-muted)}
+/* tables + trees */
+.tw{overflow-x:auto;border:1px solid var(--line);background:var(--card)}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:.92rem}
+th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:500;background:var(--bg2)}
+tr:last-child td{border-bottom:0}
+.tag{font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;background:var(--signal);color:var(--signal-ink);padding:2px 7px}
+.tag.p{background:var(--bg2);color:var(--muted)}
+.tree,.tree ul{list-style:none;margin:0;padding:0}
+.tree ul{margin-left:8px;padding-left:16px;border-left:2px solid var(--line)}
+.tree li{padding:4px 0;font-size:.92rem}
+.tree .l1{font-family:var(--display);font-weight:700;font-size:1rem}
+.tree .m{color:var(--muted);font-size:.84rem}
+/* process */
+.steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-top:1px solid var(--line)}
+.steps div{padding:22px 18px 28px 0;border-right:1px solid var(--line);padding-left:18px;min-width:0}
+.steps div:first-child{padding-left:0}
+.steps div:last-child{border-right:0}
+.steps .mono{color:var(--muted);display:block;margin-bottom:26px}
+.steps h3{font-size:1.5rem;font-weight:600;font-variation-settings:"wdth" 100;margin-bottom:8px}
+.steps p{font-size:.92rem;color:var(--muted)}
+.rhythm{background:var(--bg2);padding:20px 22px;margin-top:22px}
+.band.alt .rhythm{background:var(--bg)}
+.rhythm .mono{display:block;color:var(--muted);margin-bottom:6px}
+.rhythm p{font-family:var(--display);font-size:1.3rem;margin:0;max-width:none}
+/* transparency */
+.tr{border-left:4px solid var(--rust);background:var(--bg2);padding:22px 26px;max-width:62ch;font-size:1rem}
+.band.alt .tr{background:var(--bg)}
+/* case 002 */
+.cs-head{background:var(--band);color:var(--band-ink);padding:84px 0 48px}
+.cs-head .big{max-width:12ch}
+.bars{display:grid;gap:12px;margin-top:6px}
+.bar{display:grid;grid-template-columns:170px 1fr 48px;gap:14px;align-items:center;font-size:.95rem}
+.bar i{display:block;height:14px;background:var(--bg2);position:relative}
+.bar i::after{content:"";position:absolute;inset:0 auto 0 0;width:var(--w);background:var(--rust)}
+.bar span:last-child{text-align:right;font-family:var(--mono);font-size:.8rem}
+.cal{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px}
+.cal .dh{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.day{background:var(--card);border:1px solid var(--line);padding:8px;min-height:104px;font-size:.78rem;line-height:1.35;display:flex;flex-direction:column;gap:5px;min-width:0}
+.day .n{font-family:var(--mono);font-size:.64rem;color:var(--muted);letter-spacing:.06em}
+.day .f{align-self:flex-start;font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;padding:1px 6px}
+.f.reel{background:var(--rust);color:#fff}.f.car{border:1px solid var(--ink)}.f.story{border:1px dashed var(--muted);color:var(--muted)}.f.stat{background:var(--bg2)}
+:root:not([data-theme="light"]) .f.reel{color:#15181B}
+.wk{grid-column:1/-1;font-family:var(--display);font-weight:600;font-size:1rem;margin-top:10px;display:flex;gap:10px;align-items:baseline}
+.wk small{font-family:var(--body);font-weight:400;color:var(--muted);font-size:.8rem}
+.key{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:14px;font-size:.84rem;color:var(--muted)}
+.key span{display:flex;gap:6px;align-items:center}
+.beats{margin:0;padding-left:1.2em;font-size:.94rem}
+.beats li{margin-bottom:4px}
+.loop{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+/* about + contact */
+.about{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:48px}
+.chip-l{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
+.chip-l li{border:1px solid var(--line);background:var(--card);padding:6px 12px;font-size:.88rem}
+.cta{background:var(--signal);color:var(--signal-ink);padding:84px 0}
+.cta .head{max-width:14ch}
+.cta code{font-family:var(--mono);font-size:1rem;background:rgba(21,24,27,.12);padding:10px 14px;word-break:break-all;user-select:all}
+.cta .row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:12px}
+.cta .btn{border-color:#15181B;color:#15181B}
+.cta .btn.fill{background:#15181B;color:#F2A900}
+footer{padding:26px 0 40px;background:var(--band);color:var(--band-muted)}
+@media (max-width:900px){
+  .band{padding:60px 0}
+  .hero .grid,.split,.about,.tp{grid-template-columns:1fr;gap:30px}
+  .rep{margin:0 auto;transform:none}
+  .g2,.g3,.g4,.g5{grid-template-columns:1fr}
+  .g4.keep2,.g5.keep2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ch{grid-template-columns:1fr}
+  .flowbar{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .flowbar div{border-bottom:1px solid var(--band-line)}
+  .flowbar div::after{display:none}
+  .panels{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .steps{grid-template-columns:1fr}
+  .steps div{padding-left:0;border-right:0;border-bottom:1px solid var(--line)}
+  .steps .mono{margin-bottom:10px}
+  .loop{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cal{grid-template-columns:repeat(2,minmax(0,1fr))}.cal .dh{display:none}.day{min-height:0}
+  .pos .r{grid-template-columns:1fr;gap:6px}
+  .bar{grid-template-columns:120px 1fr 44px}
+  .count{display:none}
+  .sw{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .voice{grid-template-columns:1fr}
+}
+@media (max-width:520px){.loop{grid-template-columns:1fr}.panels{gap:8px}.pan{padding:12px}.pan b{font-size:1rem}.pan .mono{font-size:.58rem}.hero{padding-top:44px}.box .mono{margin-bottom:22px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="hdr">
+  <div class="in">
+    <div class="brand">RIZWAN<b>.</b>AHMED</div>
+    <nav class="nav" id="nav" aria-label="Sections">
+      <a href="#brief">Brief</a><a href="#market">Market</a><a href="#audience">Audience</a><a href="#position">Position</a><a href="#world">World</a><a href="#system">System</a><a href="#examples">Examples</a><a href="#growth">Growth</a><a href="#paid">Paid</a><a href="#process">Process</a><a href="#about">About</a>
+    </nav>
+    <div class="count" id="count">01 / 14</div>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero" id="top" data-label="Intro">
+  <div class="in"><div class="grid">
+    <div>
+      <span class="mono kicker">THE LOCAL TAKEOVER · Full-stack digital marketing</span>
+      <h1>Buy the car. Not the <i>runaround.</i></h1>
+      <p>THE LOCAL TAKEOVER is an end-to-end digital marketing strategy for a Dubai pre-owned car dealer, written the way I would hand it to a team: positioning, audience, channels, creative, search, paid and the signals I would measure.</p>
+      <div class="buttons">
+        <a class="btn fill" href="#brief">Read the strategy</a>
+        <a class="btn" href="#contact">Get in touch</a>
+      </div>
+    </div>
+    <div class="rep" aria-label="Sample inspection report layout">
+      <div class="top"><b>SANDLINE<br>MOTORS</b><span>Inspection report<br>Al Quoz, Dubai</span></div>
+      <div class="car">Pre-owned SUV · sample layout</div>
+      <div class="row"><span>Engine and fluids</span><span class="ok">Checked</span></div>
+      <div class="row"><span>Transmission</span><span class="ok">Checked</span></div>
+      <div class="row"><span>Brakes and tyres</span><span class="ok">Checked</span></div>
+      <div class="row"><span>Service history</span><span class="ok">Documented</span></div>
+      <div class="row"><span>Total price, all fees</span><span class="ok">Shown</span></div>
+      <div class="foot">Ask to see the report. Every car.</div>
+    </div>
+  </div></div>
+</section>
+
+<!-- 01 BRIEF -->
+<section class="band" id="brief" data-label="Brief">
+  <div class="in">
+    <span class="mono idx">01 / The brief</span>
+    <div class="split">
+      <div>
+        <h2 class="head">A reason to <i>drive over.</i></h2>
+        <p class="lede">Build a distinctive, locally relevant digital presence for a Dubai pre-owned car dealer that cannot outspend the big groups, so it has to out-trust them.</p>
+        <div class="lens"><span class="mono">Strategist's lens</span><p>“Sell the certainty. The car comes second.”</p></div>
+      </div>
+      <div class="grid g2">
+        <div class="box"><span class="mono">01</span><h3>Build recognisable positioning</h3></div>
+        <div class="box"><span class="mono">02</span><h3>Feel local to Al Quoz and Dubai</h3></div>
+        <div class="box"><span class="mono">03</span><h3>Turn inspections into shareable stories</h3></div>
+        <div class="box"><span class="mono">04</span><h3>Connect discovery to a showroom visit</h3></div>
+        <div class="box" style="grid-column:1/-1"><span class="mono">05</span><h3>Show production-ready thinking</h3></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 MARKET -->
+<section class="band alt" id="market" data-label="Market">
+  <div class="in">
+    <span class="mono idx">02 / The market</span>
+    <h2 class="head">Read the lot. <i>Find the gap.</i></h2>
+    <p class="lede muted">Preliminary desk observations by category. They are working hypotheses to validate with a content audit and local fieldwork, not an audited competitor analysis.</p>
+    <div class="grid g5" style="margin-top:34px">
+      <div class="box obs"><span class="mono">01 / Category</span><h3>Large dealer groups</h3>
+        <div class="kv"><span class="mono">Visible world</span><p>Scale, large inventory, polished showrooms.</p><span class="mono">Content tendency</span><p>Broad promotions and brand-led creative.</p><span class="mono">Sandline opportunity</span><p>Be the dealer with a name and a face.</p></div></div>
+      <div class="box obs"><span class="mono">02 / Category</span><h3>Online marketplaces</h3>
+        <div class="kv"><span class="mono">Visible world</span><p>Search-first discovery and huge choice.</p><span class="mono">Content tendency</span><p>Listings that look alike; trust varies by seller.</p><span class="mono">Sandline opportunity</span><p>Own the proof a listing cannot show.</p></div></div>
+      <div class="box obs"><span class="mono">03 / Category</span><h3>Independent showrooms</h3>
+        <div class="kv"><span class="mono">Visible world</span><p>Local, flexible, personal.</p><span class="mono">Content tendency</span><p>Posting may be irregular and price-led.</p><span class="mono">Sandline opportunity</span><p>A consistent, recognisable content system.</p></div></div>
+      <div class="box obs"><span class="mono">04 / Category</span><h3>Certified pre-owned programmes</h3>
+        <div class="kv"><span class="mono">Visible world</span><p>Brand-backed reassurance.</p><span class="mono">Content tendency</span><p>Strong on process, narrower on choice.</p><span class="mono">Sandline opportunity</span><p>Offer similar reassurance across more makes.</p></div></div>
+      <div class="box obs"><span class="mono">05 / Category</span><h3>Social and private listings</h3>
+        <div class="kv"><span class="mono">Visible world</span><p>Fast, informal, price-first.</p><span class="mono">Content tendency</span><p>Little verification, higher uncertainty.</p><span class="mono">Sandline opportunity</span><p>Be the safer version of that speed.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 AUDIENCE -->
+<section class="band" id="audience" data-label="Audience">
+  <div class="in">
+    <span class="mono idx">03 / Who we are inviting in</span>
+    <h2 class="head">People, <i>not segments.</i></h2>
+    <div class="grid g3" style="margin-top:34px">
+      <div class="box"><span class="mono">A / First car</span><h3>The Newcomer</h3>
+        <p>New to Dubai and needs reliable wheels without learning the whole system first.</p>
+        <div class="kv"><span class="mono">Motivation</span><p>Get on the road with confidence.</p><span class="mono">Friction</span><p>“Will I be overcharged or sold a problem?”</p><span class="mono">Message cue</span><p>Everything checked. Everything written down.</p></div></div>
+      <div class="box"><span class="mono">B / Family</span><h3>The Upgrader</h3>
+        <p>Outgrowing the sedan. Safety and space matter more than styling.</p>
+        <div class="kv"><span class="mono">Motivation</span><p>A car the whole family fits in and trusts.</p><span class="mono">Friction</span><p>Unknown history and hard comparisons.</p><span class="mono">Message cue</span><p>Compare two cars side by side, honestly.</p></div></div>
+      <div class="box"><span class="mono">C / Careful</span><h3>The Optimiser</h3>
+        <p>Watches every dirham and reads the fine print.</p>
+        <div class="kv"><span class="mono">Motivation</span><p>Best value with no hidden fees.</p><span class="mono">Friction</span><p>Finance terms and surprise costs.</p><span class="mono">Message cue</span><p>The total price, before you ask.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 POSITION -->
+<section class="band dark" id="position" data-label="Position">
+  <div class="in">
+    <span class="mono idx">04 / The position</span>
+    <div class="split">
+      <div>
+        <h2 class="head">A dealer that <i>shows its work.</i></h2>
+        <p class="bigq">“Sandline is where you can ask to see everything.”</p>
+      </div>
+      <dl class="pos" style="margin:0">
+        <div class="r"><dt>UVP</dt><dd>Pre-owned cars sold with the inspection shown, the price explained and a named person to ask.</dd></div>
+        <div class="r"><dt>Brand promise</dt><dd>You will know exactly what you are buying before you visit.</dd></div>
+        <div class="r"><dt>Mission</dt><dd>To make buying a used car in Dubai feel straightforward.</dd></div>
+        <div class="r"><dt>Values</dt><dd><div class="chips"><span>Show the work</span><span>Plain numbers</span><span>Local, not generic</span><span>Reply fast</span></div></dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- 05 WORLD -->
+<section class="band" id="world" data-label="World">
+  <div class="in">
+    <span class="mono idx">05 / The world</span>
+    <h2 class="head">Practical, <i>not plain.</i></h2>
+    <div class="split" style="margin-top:34px">
+      <div>
+        <div class="sw" role="list">
+          <div role="listitem" style="background:#15181B;color:#ECEEEF"><span>Asphalt / #15181B</span></div>
+          <div role="listitem" style="background:#E9EBEC"><span>Concrete / #E9EBEC</span></div>
+          <div role="listitem" style="background:#F2A900"><span>Signal / #F2A900</span></div>
+          <div role="listitem" style="background:#B0361A"><span>Rust / #B0361A</span></div>
+          <div role="listitem" style="background:#5B6770"><span>Steel / #5B6770</span></div>
+          <div role="listitem" style="background:#CDB98F"><span>Sand / #CDB98F</span></div>
+        </div>
+        <div class="spec">
+          <div class="t"><span class="mono">Archivo / Display</span><div class="s-d">Show the work.</div></div>
+          <div class="t"><span class="mono">Inter / Body and interface</span><div class="s-b">Brakes: pads at 60 percent. Tyres: even wear. Price: all fees included.</div></div>
+        </div>
+      </div>
+      <div>
+        <p class="lede">The look borrows from the workshop: stencil-clear type, report-sheet layouts and one signal colour used only for what matters.</p>
+        <div class="voice">
+          <div><span class="mono">Voice / Do</span>“Front brake pads checked at 60 percent. Here is the photo.”</div>
+          <div class="no"><span class="mono">Voice / Do not</span>“Unbeatable deals! Limited stock! Hurry!”</div>
+        </div>
+        <p class="note">Sample copy and styling for concept purposes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 SYSTEM -->
+<section class="band alt" id="system" data-label="System">
+  <div class="in">
+    <span class="mono idx">06 / The system</span>
+    <h2 class="head">Every channel <i>has a job.</i></h2>
+    <div class="ch" style="margin-top:34px">
+      <div class="box"><span class="mono">01 / Prove</span><div><h3>Instagram</h3><p>Brand world, Reels, saves and community signals.</p></div></div>
+      <div class="box"><span class="mono">02 / Discover</span><div><h3>TikTok</h3><p>Looser, creator-native walkarounds and mechanic moments.</p></div></div>
+      <div class="box"><span class="mono">03 / Decide</span><div><h3>Google Search</h3><p>High-intent model, finance and local searches.</p></div></div>
+      <div class="box"><span class="mono">04 / Convert</span><div><h3>WhatsApp</h3><p>The fast, personal reply that turns interest into a booking.</p></div></div>
+      <div class="box"><span class="mono">05 / Visit</span><div><h3>Google Business Profile</h3><p>Directions, hours, photos, reviews and accurate updates.</p></div></div>
+      <div class="box"><span class="mono">06 / Return</span><div><h3>Email and CRM</h3><p>Service reminders, new arrivals and referral prompts.</p></div></div>
+    </div>
+    <div class="flowbar" aria-label="Customer path"><div>See it</div><div>Check it</div><div>Message us</div><div>Visit</div><div>Drive away</div><div>Return</div></div>
+  </div>
+</section>
+
+<!-- 07 LENSES -->
+<section class="band" id="lenses" data-label="Four lenses">
+  <div class="in">
+    <span class="mono idx">07 / Four ways in</span>
+    <h2 class="head">One idea. <i>Four lenses.</i></h2>
+    <div class="grid g4 lensgrid" style="margin-top:34px">
+      <div class="box l1"><span class="mono">01 / The inspection</span><h3>Nothing hidden.</h3><p>Walkarounds, checklists and what the mechanic actually found.</p><div class="fm">Formats / Walkaround reel · Checklist carousel</div></div>
+      <div class="box l2"><span class="mono">02 / The explainer</span><h3>Made simple.</h3><p>Finance, paperwork and ownership transfer explained plainly.</p><div class="fm">Formats / Step guide · Myth versus fact</div></div>
+      <div class="box l3"><span class="mono">03 / The neighbourhood</span><h3>Made of this city.</h3><p>Al Quoz routes, nearby partners and local reference points.</p><div class="fm">Formats / Route card · Collaboration</div></div>
+      <div class="box l4"><span class="mono">04 / The people</span><h3>A real person to ask.</h3><p>The mechanic, the advisor and the customer collecting keys.</p><div class="fm">Formats / Mechanic cut · Handover story</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CAMPAIGN CONCEPT -->
+<section class="band signal" id="concept" data-label="Concept">
+  <div class="in">
+    <span class="mono idx">Campaign concept / The organising idea</span>
+    <h2 class="big">SHOW<br>THE WORK.</h2>
+    <p class="sub">Ask to see the report.</p>
+    <p class="lede">Treat the report as the hero. Every post, ad and reply invites the buyer to ask for proof, and the dealer to show it. It turns a worry into the brand's strongest moment.</p>
+  </div>
+</section>
+
+<!-- 08 EXAMPLES -->
+<section class="band" id="examples" data-label="Examples">
+  <div class="in">
+    <span class="mono idx">08 / Ready to make</span>
+    <h2 class="head">Ideas with <i>shot lists.</i></h2>
+    <p class="lede muted">Creative layouts written to move from a good thought to a workable production brief. No content shown here has been produced or published.</p>
+
+    <div class="ex">
+      <div class="exh"><h3>Reel 01 / “Ask to see the report”</h3><span class="mono">15–20 sec · vertical</span></div>
+      <div class="panels">
+        <div class="pan p1"><span class="mono">01 / Hook</span><b>Would you buy it unseen?</b><span class="mono">Keys on the roof, clipboard comes out</span></div>
+        <div class="pan p2"><span class="mono">02 / The check</span><b>Brakes. Tyres. Fluids. Written down.</b><span class="mono">Macro close-ups, mechanic's hands</span></div>
+        <div class="pan p3"><span class="mono">03 / The proof</span><b>Every car comes with its report.</b><span class="mono">Report slides into frame</span></div>
+        <div class="pan p4"><span class="mono">04 / End card</span><b>Ask to see it. Sandline Motors, Al Quoz.</b><span class="mono">Route card / WhatsApp cue</span></div>
+      </div>
+      <p class="note dir">Direction / handheld, close and honest → no music until the report appears → one clean beat on the price card. CTA / message us the car you want to see.</p>
+    </div>
+
+    <div class="ex">
+      <div class="exh"><h3>Product reel / “Walkaround in 60”</h3><span class="mono">Vertical · product-led</span></div>
+      <div class="panels">
+        <div class="pan p3"><span class="mono">01 / Exterior</span><b>Slow pan. Say what you see.</b><span class="mono">Panel gaps, paint, tyres</span></div>
+        <div class="pan p1"><span class="mono">02 / Interior</span><b>Seats, screen, smell test.</b><span class="mono">Honest wear shown on camera</span></div>
+        <div class="pan p2"><span class="mono">03 / Under the bonnet</span><b>What the mechanic checked.</b><span class="mono">Fluids, belts, battery</span></div>
+        <div class="pan p4"><span class="mono">04 / Price card</span><b>One price. Every fee in it.</b><span class="mono">Total cost on screen</span></div>
+      </div>
+    </div>
+
+    <div class="ex">
+      <div class="exh"><h3>Interactive story / “What kind of buyer are you?”</h3><span class="mono">4 frames · poll or quiz</span></div>
+      <div class="panels">
+        <div class="pan p3"><span class="mono">01 / Open</span><b>Your next car is…</b><span class="mono">Tap through</span></div>
+        <div class="pan p2"><span class="mono">02 / Poll</span><b>Room for everyone, or room to move?</b><span class="mono">Choose one</span></div>
+        <div class="pan p1"><span class="mono">03 / Poll</span><b>Nearly new, or new to you?</b><span class="mono">Choose one</span></div>
+        <div class="pan p4"><span class="mono">04 / Resolve</span><b>Whatever your type, ask to see the report.</b><span class="mono">Location sticker concept</span></div>
+      </div>
+      <p class="note dir">Interaction cue / native Instagram poll or quiz stickers when produced. These panels are visual concepts, not live polls.</p>
+    </div>
+
+    <div class="ex">
+      <div class="exh"><h3>Carousel / “Things your dealer should show you”</h3>
+        <div class="car-tools"><button class="arr" id="prev" aria-label="Previous slide">&larr;</button><button class="arr" id="next" aria-label="Next slide">&rarr;</button></div></div>
+      <div class="track" id="track" tabindex="0" aria-label="Carousel slides">
+        <div class="sl a"><span class="mono">01 / 06</span><b>Things your dealer should show you</b><span class="mono">Sandline Motors ↗</span></div>
+        <div class="sl b"><span class="mono">02 / 06</span><b>The inspection report</b><span class="mono">Not a verbal promise</span></div>
+        <div class="sl c"><span class="mono">03 / 06</span><b>The service history</b><span class="mono">Dates, kilometres, workshop</span></div>
+        <div class="sl d"><span class="mono">04 / 06</span><b>The total price</b><span class="mono">Fees included, before you ask</span></div>
+        <div class="sl e"><span class="mono">05 / 06</span><b>The transfer steps</b><span class="mono">What happens after you say yes</span></div>
+        <div class="sl f"><span class="mono">06 / 06</span><b>A person to ask</b><span class="mono">Save this before your next viewing</span></div>
+      </div>
+      <p class="note dir">Caption direction / a checklist worth keeping, not a lecture. CTA / save it, or send it to someone about to buy a car.</p>
+    </div>
+
+    <div class="ex">
+      <div class="exh"><h3>UGC concept / #MySandlineKeys</h3><span class="mono">Community mechanic · proposed</span></div>
+      <div class="grid g3">
+        <div class="box"><span class="mono">01 / Invite</span><h3>The key moment.</h3><p>Invite buyers to share their first-day photo with the keys in hand.</p></div>
+        <div class="box"><span class="mono">02 / Permission</span><h3>Ask first.</h3><p>Request clear permission before any customer story is featured.</p></div>
+        <div class="box"><span class="mono">03 / Feature</span><h3>Monthly spotlight.</h3><p>Share one story a month with the customer's own words.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 09 GROWTH -->
+<section class="band alt" id="growth" data-label="Growth">
+  <div class="in">
+    <span class="mono idx">09 / From scroll to showroom</span>
+    <h2 class="head">Make the visit <i>easy.</i></h2>
+    <p class="lede muted">A proposed acquisition toolkit to pilot, instrument and refine. These are not claimed outcomes.</p>
+    <div class="grid g4" style="margin-top:34px">
+      <div class="box"><span class="mono">Discovery / Test</span><h3>Hyperlocal creative</h3><p>Geo-targeted content around Al Quoz and the routes people drive.</p></div>
+      <div class="box"><span class="mono">Trust / Pilot</span><h3>Local creators</h3><p>Pilot with automotive creators whose audience fits the brand.</p></div>
+      <div class="box"><span class="mono">Conversion / Build</span><h3>Click to WhatsApp</h3><p>A pre-filled message naming the car, answered in minutes during opening hours.</p></div>
+      <div class="box"><span class="mono">Visit / Build</span><h3>Booking flow</h3><p>Test-drive slots with automatic reminders.</p></div>
+      <div class="box"><span class="mono">Context / Pilot</span><h3>Neighbourhood partners</h3><p>Cross-promote with nearby detailing and service businesses.</p></div>
+      <div class="box"><span class="mono">Finance / Build</span><h3>Finance explainer</h3><p>Plain breakdown pages and a simple calculator.</p></div>
+      <div class="box"><span class="mono">Retention / Pilot</span><h3>Review and referral</h3><p>A polite request after handover, with a referral prompt.</p></div>
+      <div class="box"><span class="mono">Measure / Build</span><h3>Source tracking</h3><p>UTM tags and source labels so every enquiry knows where it came from.</p></div>
+    </div>
+
+    <div style="margin-top:56px">
+      <h3 style="font-size:1.6rem;margin-bottom:6px">Search build</h3>
+      <p class="muted">Keyword themes grouped by intent. Volume and difficulty would be pulled from Semrush before any page is built, so no figures are quoted.</p>
+      <div class="tw"><table>
+        <thead><tr><th>Theme</th><th>Example searches</th><th>Intent</th><th>Page to build</th><th>Priority</th></tr></thead>
+        <tbody>
+          <tr><td>Inventory by type</td><td>used SUV Dubai, used sedan for sale Dubai</td><td><span class="tag">Buy</span></td><td>Category pages with live stock</td><td>1</td></tr>
+          <tr><td>Model pages</td><td>used Toyota Land Cruiser Dubai, used Nissan Patrol Dubai</td><td><span class="tag">Buy</span></td><td>Model landing pages</td><td>1</td></tr>
+          <tr><td>Local</td><td>used car showroom Al Quoz</td><td><span class="tag">Local</span></td><td>Location page and Business Profile</td><td>1</td></tr>
+          <tr><td>Finance</td><td>used car finance UAE</td><td><span class="tag">Buy</span></td><td>Finance explainer and calculator</td><td>2</td></tr>
+          <tr><td>Buying guides</td><td>how to buy a used car in Dubai, used car inspection checklist</td><td><span class="tag p">Learn</span></td><td>Long-form guides</td><td>2</td></tr>
+          <tr><td>Paperwork</td><td>car ownership transfer Dubai steps</td><td><span class="tag p">Learn</span></td><td>Step-by-step guide</td><td>3</td></tr>
+        </tbody></table></div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 PAID -->
+<section class="band dark" id="paid" data-label="Paid logic">
+  <div class="in">
+    <span class="mono idx">10 / Paid social and search logic</span>
+    <h2 class="head">Creative first. <i>Then amplify.</i></h2>
+    <div class="tabs" role="tablist" aria-label="Funnel stage">
+      <button role="tab" aria-selected="true" aria-controls="tp1" id="t1">01 Awareness</button>
+      <button role="tab" aria-selected="false" aria-controls="tp2" id="t2">02 Consideration</button>
+      <button role="tab" aria-selected="false" aria-controls="tp3" id="t3">03 Conversion</button>
+    </div>
+    <div class="tp on" id="tp1" role="tabpanel" aria-labelledby="t1">
+      <h3>Make them look twice.</h3>
+      <div><ul><li>Short walkaround and inspection films led by “Show the work”.</li><li>Broad but local audiences around Dubai.</li><li>Test hooks and early attention before scaling any creative direction.</li></ul>
+      <div class="kp"><span>Video view rate</span><span>Cost per 1,000 reached</span><span>3-second hold</span></div></div>
+    </div>
+    <div class="tp" id="tp2" role="tabpanel" aria-labelledby="t2">
+      <h3>Show them the proof.</h3>
+      <div><ul><li>Retarget video viewers and site visitors with inspection reports and comparisons.</li><li>Offer a free report before the visit.</li><li>Answer common worries in the creative itself.</li></ul>
+      <div class="kp"><span>Saves and shares</span><span>Profile visits</span><span>WhatsApp starts</span></div></div>
+    </div>
+    <div class="tp" id="tp3" role="tabpanel" aria-labelledby="t3">
+      <h3>Make the visit easy.</h3>
+      <div><ul><li>Google Search on high-intent model, finance and local terms.</li><li>Click-to-WhatsApp with the car name pre-filled.</li><li>A booking prompt in every reply.</li></ul>
+      <div class="kp"><span>Cost per enquiry</span><span>Enquiry to visit rate</span><span>Time to first reply</span></div></div>
+    </div>
+    <p class="note">Set budgets and benchmarks after baseline testing. No spend, audience size or performance result is assumed.</p>
+
+    <div class="grid g2" style="margin-top:52px">
+      <div class="box"><span class="mono">Google Search structure</span>
+        <ul class="tree" style="color:var(--band-ink)">
+          <li class="l1">Campaign A · Brand and showroom<ul><li>Brand name <span class="m">exact, phrase</span></li><li>Showroom Al Quoz <span class="m">phrase</span></li></ul></li>
+          <li class="l1">Campaign B · Inventory<ul><li>SUVs</li><li>Sedans</li><li>Luxury</li><li>Specific models <span class="m">phrase, exact</span></li></ul></li>
+          <li class="l1">Campaign C · Finance<ul><li>Finance and loans</li></ul></li>
+          <li class="l1">Shared negatives<ul><li class="m">rent, rental, parts, scrap, salvage, jobs, free</li></ul></li>
+        </ul></div>
+      <div class="box"><span class="mono">Meta structure</span>
+        <ul class="tree" style="color:var(--band-ink)">
+          <li class="l1">Prospecting · Video<ul><li>Walkaround and mechanic Reels</li><li class="m">Dubai, car interests, lookalikes of enquirers</li></ul></li>
+          <li class="l1">Conversion · Click to WhatsApp<ul><li>Offer: free inspection report on any car</li><li>Pre-filled message with the car name</li></ul></li>
+          <li class="l1">Retargeting<ul><li>Watched 50 percent or more of a video</li><li>Viewed a car page without enquiring</li></ul></li>
+        </ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- 11 PROCESS -->
+<section class="band" id="process" data-label="Process">
+  <div class="in">
+    <span class="mono idx">11 / How I work</span>
+    <h2 class="head">Think clearly. <i>Make things.</i></h2>
+    <div class="steps" style="margin-top:34px">
+      <div><span class="mono">01</span><h3>Diagnose</h3><p>Listen, audit and find the real tension.</p></div>
+      <div><span class="mono">02</span><h3>Position</h3><p>Make one useful choice about what to own.</p></div>
+      <div><span class="mono">03</span><h3>Build the system</h3><p>Give each channel and pillar a role.</p></div>
+      <div><span class="mono">04</span><h3>Produce examples</h3><p>Turn strategy into formats a team can shoot.</p></div>
+      <div><span class="mono">05</span><h3>Learn and iterate</h3><p>Measure signals and improve the next cycle.</p></div>
+    </div>
+    <div class="rhythm"><span class="mono">Weekly delivery rhythm</span><p>Plan → Production checklist → Approvals → Publish → Report → Learn</p></div>
+  </div>
+</section>
+
+<!-- 12 MEASUREMENT -->
+<section class="band alt" id="measure" data-label="Measurement">
+  <div class="in">
+    <span class="mono idx">12 / The difference</span>
+    <h2 class="head">Signals, <i>not claims.</i></h2>
+    <p class="lede muted">Proposed signals are kept separate from evidence. Learning matters more than invented numbers.</p>
+    <div class="tw" style="margin-top:30px"><table>
+      <thead><tr><th>Stage</th><th>Signal</th><th>Where it comes from</th><th>Decision it informs</th></tr></thead>
+      <tbody>
+        <tr><td><b>Attention</b></td><td>3-second hold, video view rate</td><td>Meta and TikTok insights</td><td>Which hooks to scale</td></tr>
+        <tr><td><b>Interest</b></td><td>Saves, shares, profile visits</td><td>Instagram insights</td><td>Which content lens earns repeat attention</td></tr>
+        <tr><td><b>Intent</b></td><td>WhatsApp starts, calls, direction taps</td><td>Business Profile, WhatsApp, GA4</td><td>Which channel brings real buyers</td></tr>
+        <tr><td><b>Visit</b></td><td>Booked and attended viewings</td><td>Booking flow, CRM</td><td>Whether enquiries are the right people</td></tr>
+        <tr><td><b>Sale</b></td><td>Cost per car sold from marketing</td><td>CRM, ad platforms</td><td>Where budget goes next</td></tr>
+      </tbody></table></div>
+  </div>
+</section>
+
+<!-- TRANSPARENCY -->
+<section class="band" id="transparency" data-label="Transparency">
+  <div class="in">
+    <span class="mono idx">Transparency / A clear line</span>
+    <h2 class="head">Conceptual work. <i>Clearly labelled.</i></h2>
+    <div class="tr">Sandline Motors is a brand created for this case study. All campaigns, examples, partnerships, forecasts and recommendations shown here are conceptual work and have not been executed. No performance results, client outcomes, budgets or test findings are being claimed.</div>
+  </div>
+</section>
+<!-- ABOUT -->
+<section class="band alt" id="about" data-label="About">
+  <div class="in">
+    <span class="mono idx">About the strategist</span>
+    <div class="about">
+      <div>
+        <h2 class="head">Customer-facing <i>first.</i></h2>
+        <p class="lede">Before planning campaigns, I spent months meeting business owners face to face, collecting field data and following up on leads. It taught me what makes people say yes, and what makes them walk away. I plan content, search and social with that lens, and I check whether each piece did its job.</p>
+        <p class="muted">Based in Dubai. Bachelor of Engineering in Cyber Security, so I am comfortable with tracking, data and the technical side of campaigns. Languages: English, Hindi, Urdu, Kannada.</p>
+      </div>
+      <div>
+        <div class="box"><span class="mono">Certifications</span>
+          <ul class="chip-l"><li>Google Ads Search</li><li>Google Analytics</li><li>HubSpot Digital Marketing</li><li>HubSpot Content Marketing</li><li>HubSpot Social Media Marketing</li><li>Semrush SEO</li></ul></div>
+        <div class="box" style="margin-top:16px"><span class="mono">Toolkit</span>
+          <ul class="chip-l"><li>GA4</li><li>Google Ads</li><li>Semrush</li><li>HubSpot</li><li>Canva</li><li>CapCut</li><li>Adobe Express</li><li>Excel</li></ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact" data-label="Contact">
+  <div class="in">
+    <span class="mono idx">Contact</span>
+    <h2 class="head">Make the everyday <i>worth the visit.</i></h2>
+    <p class="lede">Available to start immediately in Dubai. Send a brief and I will reply with how I would approach it.</p>
+    <div class="row"><code id="mail">mdrizwan24824@gmail.com</code><button class="btn fill" id="copy" type="button">Copy email</button><a class="btn" href="https://linkedin.com/in/rizwan24824" target="_blank" rel="noopener">LinkedIn</a></div>
+    <p style="margin:16px 0 0">+971 54 173 7752 · Dubai, UAE</p>
+  </div>
+</section>
+</main>
+<footer><div class="in mono">© 2026 Mohammad Rizwan Ahmed · Concept case study</div></footer>
+
+<script>
+(function(){
+  /* calendar */
+  var days=[
+   ["reel","The 5-minute slow morning"],["car","What is a slow morning? 5 rules"],["story","Poll: tea or coffee?"],["stat","Hero shot of the Slow Morning Set"],["reel","Behind the blend: the pour"],["car","Calm balcony spots in Dubai"],["story","Sunday reset Q&A"],
+   ["reel","A shift worker's wind-down"],["car","Candle care: make it last"],["reel","Unboxing, no talking"],["story","Packing day behind the scenes"],["stat","Customer quote"],["reel","Slow versus rushed"],["car","The perfect weekend ritual"],
+   ["reel","Customer ritual feature"],["car","Scent notes explained"],["story","Quiz: which blend are you?"],["reel","Sunrise spot plus a cup"],["stat","Prompt: share your slow morning"],["reel","Founder story in 30 seconds"],["car","Gift a slow morning"],
+   ["reel","Best sellers ranked"],["car","Desk corner reset"],["story","Bundle countdown"],["reel","Customer reviews, read aloud"],["stat","The Slow Morning Set offer"],["car","Your questions answered"],["reel","Month recap and top posts remixed"],
+   ["story","Answers to your DMs"],["reel","What is next, plus the link"]
+  ];
+  var names={reel:"Reel",car:"Carousel",story:"Story",stat:"Static"};
+  var heads=["Week 1|Introduce the ritual","Week 2|Show the craft","Week 3|Bring in the community","Week 4|Invite action","Final days|Close the month"];
+  var dn=["Mon","Tue","Wed","Thu","Fri","Sat","Sun"],html="",i;
+  for(i=0;i<7;i++){html+='<div class="dh">'+dn[i]+'</div>';}
+  for(i=0;i<days.length;i++){
+    if(i%7===0){var h=heads[Math.floor(i/7)].split("|");html+='<div class="wk">'+h[0]+' <small>'+h[1]+'</small></div>';}
+    html+='<div class="day"><span class="n">DAY '+(i+1)+'</span><span class="f '+days[i][0]+'">'+names[days[i][0]]+'</span><span>'+days[i][1]+'</span></div>';
+  }
+  var calEl=document.getElementById("cal");if(calEl){calEl.innerHTML=html;}
+
+  /* tabs */
+  var tabs=[].slice.call(document.querySelectorAll('.tabs [role="tab"]'));
+  tabs.forEach(function(t){t.addEventListener("click",function(){
+    tabs.forEach(function(x){x.setAttribute("aria-selected",x===t?"true":"false");document.getElementById(x.getAttribute("aria-controls")).classList.toggle("on",x===t);});
+  });});
+
+  /* carousel */
+  var tr=document.getElementById("track");if(tr){
+  function step(d){var s=tr.querySelector(".sl");tr.scrollBy({left:d*(s.offsetWidth+12),behavior:"smooth"});}
+  document.getElementById("prev").addEventListener("click",function(){step(-1)});
+  document.getElementById("next").addEventListener("click",function(){step(1)});}
+
+  /* nav + counter */
+  var secs=[].slice.call(document.querySelectorAll("main [data-label]"));
+  var total=secs.length;
+  var links=[].slice.call(document.querySelectorAll("#nav a"));
+  var cnt=document.getElementById("count");
+  function pad(n){return n<10?"0"+n:""+n;}
+  function update(){
+    var y=window.scrollY+120,cur=0;
+    for(var k=0;k<secs.length;k++){if(secs[k].offsetTop<=y){cur=k;}}
+    cnt.textContent=pad(cur+1)+" / "+pad(total);
+    var id=null;
+    for(var k2=cur;k2>=0;k2--){if(secs[k2].id&&document.querySelector('#nav a[href="#'+secs[k2].id+'"]')){id=secs[k2].id;break;}}
+    links.forEach(function(a){var on=a.getAttribute("href")==="#"+id;a.classList.toggle("on",on);if(on&&a.scrollIntoView){var nav=a.parentNode;nav.scrollLeft=a.offsetLeft-nav.clientWidth/3;}});
+  }
+  window.addEventListener("scroll",function(){window.requestAnimationFrame(update)},{passive:true});
+  window.addEventListener("resize",update);
+  update();
+
+  /* copy */
+  var btn=document.getElementById("copy"),mail=document.getElementById("mail");
+  btn.addEventListener("click",function(){
+    function sel(){var r=document.createRange();r.selectNodeContents(mail);var s=window.getSelection();s.removeAllRanges();s.addRange(r);btn.textContent="Selected. Press copy.";}
+    try{navigator.clipboard.writeText(mail.textContent).then(function(){btn.textContent="Copied"},sel);}catch(e){sel();}
+  });
+})();
+
+</script>
+</body>
+</html>
